@@ -5,27 +5,22 @@ function QuotesList() {
     return (
         <ul className="characters">
         <li>
-          <QuoteItem name="Monica" />
+          <QuoteItem name="Ross" phrase="Pivot! Pivot! Pivot! Pivot! Pivot!"/>
         </li>
         <li>
-          <QuoteItem name="Ross" />
-          <p>Estamos en una pausa.</p>
+          <QuoteItem name="Joey" phrase="Joey doesn't share food!"/>
         </li>
         <li>
-          <QuoteItem name="Rachel" />
-          <p>¡No estoy gorda! Estoy embarazada.</p>
+          <QuoteItem name="Phoebe" phrase="But they don't know that we know they know we know!"/>
         </li>
         <li>
-          <QuoteItem name="Chandler" />
-          <p>¡Pivotar!</p>
+          <QuoteItem name="Phoebe" phrase="That's P, as in Phoebe, H as in hoebe, O as in oebe, E as in ebe, B as in bebe, and E as in 'Ello there mate."/>
         </li>
         <li>
-          <QuoteItem name="Joey" />
-          <p>¿Cómo estás tú haciendo?</p>
+          <QuoteItem name="Chandler" phrase="That's P, as in Phoebe, H as in hoebe, O as in oebe, E as in ebe, B as in bebe, and E as in 'Ello there mate."/>
         </li>
         <li>
-          <QuoteItem name="Phoebe" />
-          <p>¡Oh, Dios mío</p>
+          <QuoteItem name="Rachel" phrase=	"I got off the plane."/>
         </li>
       </ul>
     );
