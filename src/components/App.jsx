@@ -1,15 +1,14 @@
 import '../scss/App.scss'
+import Header from './Header';
 import Filters from './Filters';
 import QuotesList from './QuotesList';
 
 function App() {
   return (
     <div className="page">
-      <header>
-        <h1>Frases de Friends</h1>
-      </header>
+      <Header />
       <main>
-        <Form />
+        <Filters />
         <QuotesList />
       </main>
   </div>
