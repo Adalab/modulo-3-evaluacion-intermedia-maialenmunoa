@@ -1,29 +1,27 @@
+import PropTypes from 'prop-types';
+
 import QuoteItem from "./QuoteItem";
 
-function QuotesList() {
+function QuotesList({quotes}) {
 
-    return (
-        <ul className="characters">
-        <li>
-          <QuoteItem name="Ross" phrase="Pivot! Pivot! Pivot! Pivot! Pivot!"/>
-        </li>
-        <li>
-          <QuoteItem name="Joey" phrase="Joey doesn't share food!"/>
-        </li>
-        <li>
-          <QuoteItem name="Phoebe" phrase="But they don't know that we know they know we know!"/>
-        </li>
-        <li>
-          <QuoteItem name="Phoebe" phrase="That's P, as in Phoebe, H as in hoebe, O as in oebe, E as in ebe, B as in bebe, and E as in 'Ello there mate."/>
-        </li>
-        <li>
-          <QuoteItem name="Chandler" phrase="That's P, as in Phoebe, H as in hoebe, O as in oebe, E as in ebe, B as in bebe, and E as in 'Ello there mate."/>
-        </li>
-        <li>
-          <QuoteItem name="Rachel" phrase=	"I got off the plane."/>
-        </li>
-      </ul>
-    );
-  }
+  const htmlQuotes = friends.map((friend, idx) => (
+    <li key={idx}>
+      <QuoteItem 
+        name={friend.character}
+        phrase={friend.quote}
+      />
+    </li>
+  ));
+
+  return (
+    <ul className="characters">
+      {htmlQuotes}
+    </ul>
+  );
+}
+
+QuotesList.propTypes = {
+  quotes: PropTypes.array
+}
   
-  export default QuotesList;
+export default QuotesList;

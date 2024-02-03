@@ -16,7 +16,7 @@ function App() {
       <Header />
       <main>
         <Filters />
-        <QuotesList />
+        <QuotesList quotes={quotes} />
       </main>
   </div>
   )
