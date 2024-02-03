@@ -1,9 +1,14 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 function Filters( {handleFilterQuote, handleFilterCharacter} ) {
 
+  // Manejar cambios en el campo de texto de frase 
   const handleInput = (event) => {
     handleFilterQuote(event.currentTarget.value);
   };
 
+  // Manejar cambios en el campo de selección de personaje
   const handleSelect = (event) => {
     handleFilterCharacter(event.currentTarget.value);
   };
@@ -25,5 +30,10 @@ function Filters( {handleFilterQuote, handleFilterCharacter} ) {
     </form>
   );
 }
+
+Filters.propTypes = {
+  handleFilterQuote: PropTypes.func.isRequired,
+  handleFilterCharacter: PropTypes.func.isRequired,
+};
 
 export default Filters;
