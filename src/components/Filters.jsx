@@ -1,9 +1,11 @@
-function Filters( {handleFilterQuote} ) {
+function Filters( {handleFilterQuote, handleFilterCharacter} ) {
 
   const handleInput = (event) => {
-
     handleFilterQuote(event.currentTarget.value);
+  };
 
+  const handleSelect = (event) => {
+    handleFilterCharacter(event.currentTarget.value);
   };
 
   return (
@@ -11,8 +13,8 @@ function Filters( {handleFilterQuote} ) {
       <label htmlFor="search">Filtrar por frase:</label>
         <input type="text" id="search" placeholder="Buscar..." onInput={handleInput} />
       <label htmlFor="character">Filtrar por personaje:</label>  
-        <select>
-          <option value="todos">Todos</option>
+        <select id="character" onInput={handleSelect}>
+          <option value="all">Todos</option>
           <option value="monica">Mónica</option>
           <option value="ross">Ross</option>
           <option value="rachel">Rachel</option>
