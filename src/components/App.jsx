@@ -1,25 +1,33 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Filters from './Filters';
-import Header from './Header';
-import QuotesList from './QuotesList';
+import Filters from "./Filters";
+import Header from "./Header";
+import QuotesList from "./QuotesList";
 
-import '../scss/App.scss';
+import "../scss/App.scss";
 
-import dataFriends from '../data/friends.json';
+import dataFriends from "../data/friends.json";
 
 function App() {
-  const [quotes, setQuotes] = useState(dataFriends);
+  const [friends] = useState(dataFriends);
+
+  const [filterQuote, setFilterQuote] = useState(''); 
+
+  const handleFilterQuote = (filterValue) => {
+    setFilterQuote(filterValue);
+  };
+
+  const filteredFriends = friends.filter( friend => friend.quote.toLowerCase().includes(filterQuote.toLowerCase()) );
 
   return (
     <div className="page">
       <Header />
       <main>
-        <Filters />
-        <QuotesList quotes={quotes} />
+        <Filters handleFilterQuote={handleFilterQuote} />
+        <QuotesList friends={filteredFriends} />
       </main>
-  </div>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
