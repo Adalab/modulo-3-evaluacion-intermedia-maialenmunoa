@@ -4,6 +4,7 @@ import QuoteItem from "./QuoteItem";
 
 function QuotesList({ friends }) {
 
+  // Mapear la lista de Friends para renderizar cada elemento como QuoteItem
   const htmlQuotes = friends.map((friend, idx) => (
     <li key={idx}>
       <QuoteItem 
