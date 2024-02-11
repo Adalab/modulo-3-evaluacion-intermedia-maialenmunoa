@@ -1,7 +1,6 @@
-import React from "react";
 import PropTypes from "prop-types";
 
-function Filters( {handleFilterQuote, handleFilterCharacter} ) {
+function Filters( {handleFilterQuote, handleFilterCharacter, filterQuote, filterCharacter} ) {
 
   // Manejar cambios en el campo de texto de frase 
   const handleInput = (event) => {
@@ -16,9 +15,9 @@ function Filters( {handleFilterQuote, handleFilterCharacter} ) {
   return (
     <form>
       <label htmlFor="search">Filtrar por frase:</label>
-        <input type="text" id="search" placeholder="Buscar..." onInput={handleInput} />
+        <input type="text" id="search" placeholder="Buscar..." value={filterQuote} onInput={handleInput} />
       <label htmlFor="character">Filtrar por personaje:</label>  
-        <select id="character" onInput={handleSelect}>
+        <select id="character" value={filterCharacter} onChange={handleSelect}>
           <option value="all">Todos</option>
           <option value="monica">Mónica</option>
           <option value="ross">Ross</option>
@@ -34,6 +33,8 @@ function Filters( {handleFilterQuote, handleFilterCharacter} ) {
 Filters.propTypes = {
   handleFilterQuote: PropTypes.func.isRequired,
   handleFilterCharacter: PropTypes.func.isRequired,
+  filterCharacter: PropTypes.string.isRequired,
+  filterQuote: PropTypes.string.isRequired,
 };
 
 export default Filters;

@@ -29,24 +29,12 @@ function App() {
     setFilterCharacter(character);
   };
 
-  // Filtrar Friends basado en la frase y el personaje seleccionado
-  const filteredFriends = friends.filter( friend => {
-    // Comprueba si la frase incluye el texto de filtro
-    let quoteMatches = friend.quote.toLowerCase().includes(filterQuote.toLowerCase());
-  
-    // Comprueba si el personaje de Friends coincide con el filtro de personaje
-    let characterMatches = false;
-    if (filterCharacter === 'todos') {
-      // Si el filtro de personaje es 'todos', entonces todos los Friends coinciden
-      characterMatches = true;
-    } else if (friend.character.toLowerCase() === filterCharacter) {
-      // Si el personaje coincide con el filtro de personaje, entonces hay una coincidencia
-      characterMatches = true;
-    }
-  
-    // Si tanto la frase como el personaje coinciden, entonces pasa el filtro
-    return quoteMatches && characterMatches;
-  });
+ // Calcular las frases filtradas en base al array de todas las frases y los valores de los filtros
+  const filteredFriends = friends.filter(friend => {
+  const quoteMatches = !filterQuote || friend.quote.toLowerCase().includes(filterQuote.toLowerCase());
+  const characterMatches = filterCharacter === 'todos' || friend.character.toLowerCase() === filterCharacter;
+  return quoteMatches && characterMatches;
+});
 
   return (
     <div className="page">
