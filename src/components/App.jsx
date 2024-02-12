@@ -23,17 +23,17 @@ function App() {
     }
   };
 
-  const filteredQuotes =
-    quotesList
-      .filter( quote => quote.quote.includes(filterQuote) )
-      .filter( quote => {
-          if( filterCharacter === 'all' ) {
-            return true;
-          }
-          else {
-            return quote.character===filterCharacter;
-          }
-        });
+  const filteredQuotes = quotesList.filter(quote => {
+    const quoteLowerCase = quote.quote.toLowerCase(); // Convertir la quote a minúsculas
+    const filterLowerCase = filterQuote.toLowerCase(); // Convertir la frase del filtro a minúsculas
+    const quoteMatches = quoteLowerCase.includes(filterLowerCase);
+    
+    if (filterCharacter === 'all') {
+      return quoteMatches;
+    } else {
+      return quoteMatches && quote.character === filterCharacter;
+    }
+  });
 
   return (
     <div className="page">

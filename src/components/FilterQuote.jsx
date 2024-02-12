@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 function FilterQuote({ handleFilter }) {
 
   const handleInputQuote = (event) => {
-    handleFilter('quote', event.currentTarget.value);
+    const value = event.currentTarget.value.toLowerCase(); // Convertir la frase del filtro a minúsculas
+    handleFilter('quote', value);
   };
 
   return (
-    <label htmlFor="character">
+    <label>
       Filtrar por frase
       <input 
-      type="text" 
-      name="quote" 
-      id="quote" 
-      onInput={handleInputQuote} 
+        type="text" 
+        id="quote" 
+        onInput={handleInputQuote} 
       />
     </label>
   );
