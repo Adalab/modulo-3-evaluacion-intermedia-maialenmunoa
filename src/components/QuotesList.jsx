@@ -14,7 +14,7 @@ function QuotesList({ quotesList }) {
   ));
 
   return (
-    <ul>
+    <ul className="list">
       {htmlQuotes}
     </ul>
   );

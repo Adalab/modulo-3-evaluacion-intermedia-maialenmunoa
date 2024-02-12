@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 function QuoteItem({name, phrase}) {
 
     return (
-        <>
-            <h2>{name}</h2>
-            <p>{phrase}</p>
-        </>
+        <li className="list__item">
+                <h2 className="list__item-name">{name}</h2>
+                <p className="list__item-quote">{phrase}</p>
+        </li>
     );
 }
 

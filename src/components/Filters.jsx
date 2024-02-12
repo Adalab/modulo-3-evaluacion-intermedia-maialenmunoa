@@ -6,7 +6,7 @@ import FilterQuote from "./FilterQuote";
 function Filters( {handleFilter} ) {
 
   return (
-    <form>
+    <form className="form">
       <FilterQuote handleFilter={handleFilter} />
       <FilterCharacter handleFilter={handleFilter} />
     </form>
