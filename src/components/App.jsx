@@ -11,7 +11,7 @@ import "../scss/App.scss";
 
 function App() {
 
-  const [quotesList] = useState(dataFriends);
+  const [quotesList, setQuotesList] = useState(dataFriends);
   const [filterQuote, setFilterQuote] = useState(''); 
   const [filterCharacter, setFilterCharacter] = useState('all');
 
@@ -22,6 +22,15 @@ function App() {
     else if( filterName === 'character' ) {
       setFilterCharacter(value);
     }
+  };
+
+  // Agregar una nueva cita a la lista de citas
+  const handleAddQuote = (quote, character) => {
+    const newQuote = {
+      quote: quote,
+      character: character
+    };
+    setQuotesList([...quotesList, newQuote]);
   };
 
   const filteredQuotes = quotesList.filter(quote => {
@@ -45,11 +54,11 @@ function App() {
       <main>
         <Filters handleFilter={handleFilter} />
         {characterHasNoQuotes ? (
-          <p>El personaje seleccionado no tiene frases.</p>
+          <p className="page__text">El personaje seleccionado no tiene frases.</p>
         ) : (
           <QuotesList quotesList={filteredQuotes} />
         )}
-        <FormAdd />
+        <FormAdd handleAddQuote={handleAddQuote}/>
       </main>
     </div>
   );
