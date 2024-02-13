@@ -3,6 +3,7 @@ import { useState } from "react";
 import Filters from "./Filters";
 import Header from "./Header";
 import QuotesList from "./QuotesList";
+import FormAdd from "./FormAdd";
 
 import dataFriends from "../data/friends.json";
 
@@ -41,6 +42,7 @@ function App() {
       <main>
         <Filters handleFilter={handleFilter} />
         <QuotesList quotesList={filteredQuotes} />
+        <FormAdd />
       </main>
     </div>
   );

@@ -1,13 +1,16 @@
+import "../scss/App.scss";
+
 function FormAdd() {
     return (
-      <form>
-        <h2>Añadir una nueva frase</h2>
+      <form className="form-add">
+        <h2>Añadir una nueva frase:</h2>
         <label htmlFor="quote">
           <span>Frase</span>
           <input
             type="text"
             name="quote"
             id="quote"
+            className="form-add__input"
           />
         </label>
         <label htmlFor="character">
@@ -16,9 +19,10 @@ function FormAdd() {
             type="text"
             name="character"
             id="character"
+            className="form-add__input"
           />
         </label>
-        <button>Añadir un nueva frase</button>
+        <button className="form-add__button">Añadir una nueva frase</button>
       </form>
     );
   }
