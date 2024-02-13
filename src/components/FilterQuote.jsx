@@ -8,9 +8,10 @@ function FilterQuote({ handleFilter }) {
   };
 
   return (
-    <label>
-      Filtrar por frase
+    <label className="filter__quote">
       <input 
+        className="filter__quote-input"
+        placeholder="Buscar frase..."
         type="text" 
         id="quote" 
         onInput={handleInputQuote} 

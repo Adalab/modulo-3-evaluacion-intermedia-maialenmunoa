@@ -32,13 +32,10 @@
 }
 
 .form {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 2fr;
-    margin: auto;
-    max-width: 960px;
-    padding: 20px 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
 .list {
@@ -50,9 +47,51 @@
     list-style: none;
 
     &__item {
-        border: 1px rgb(2, 178, 231);
+        border: 1px solid rgb(2, 174, 227);
         padding: 5px;
         border-radius: 10px;
         text-align: left;        
     }
+    &__item-name {
+        font-size: 16px;
+        font-family: "Libre Baskerville", serif;
+        font-weight: bold;
+        padding: 2px;
+    }
+    &__item-quote {
+        font-size: 14px;
+        font-family: "roboto";
+        padding: 2px;
+    }
 }
+
+.filter__quote-input {
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background-color: white; 
+    transition: border-color 0.3s ease; 
+    width: 200px;
+  }
+  
+  .filter__quote-input:hover,
+  .filter__quote-input:focus {
+    border-color: #ff0022; 
+    outline: none; 
+}
+
+.filter__select {
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background-color: white; 
+    cursor: pointer; 
+    transition: border-color 0.3s ease; 
+    width: 200px;
+  }
+  
+  .filter__select:hover,
+  .filter__select:focus {
+    border-color: #ff0022; 
+    outline: none; 
+  }
