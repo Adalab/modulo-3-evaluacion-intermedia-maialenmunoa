@@ -8,8 +8,7 @@ function FormAdd({ handleAddQuote }) {
   const [quote, setQuote] = useState('');
   const [character, setCharacter] = useState('');
 
-   // Manejar cambios en el campo de texto de la frase
-   const handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     if (name === 'quote') {
       setQuote(value);
@@ -18,7 +17,6 @@ function FormAdd({ handleAddQuote }) {
     }
   };
 
-  // Manejar el envío del formulario
   const handleSubmit = (event) => {
     event.preventDefault();
     if (quote.trim() && character.trim()) {

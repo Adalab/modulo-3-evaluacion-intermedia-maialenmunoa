@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Filters from "./Filters";
 import Header from "./Header";
@@ -15,6 +15,17 @@ function App() {
   const [filterQuote, setFilterQuote] = useState(''); 
   const [filterCharacter, setFilterCharacter] = useState('all');
 
+  // Cargar las quotes guardadas del almacenamiento local al inicio
+  useEffect(() => {
+    const savedQuotes = JSON.parse(localStorage.getItem("quotes")) || dataFriends;
+    setQuotesList(savedQuotes);
+  }, []);
+
+  // Guardar las quotes en el almacenamiento local cada vez que se actualice la lista
+  useEffect(() => {
+    localStorage.setItem("quotes", JSON.stringify(quotesList));
+  }, [quotesList]);
+
   const handleFilter = (filterName, value) => {
     if( filterName === 'quote' ) {
       setFilterQuote(value);
@@ -24,7 +35,7 @@ function App() {
     }
   };
 
-  // Agregar una nueva cita a la lista de citas
+  // Agregar una nueva quote a la lista de quotes
   const handleAddQuote = (quote, character) => {
     const newQuote = {
       quote: quote,
@@ -34,9 +45,9 @@ function App() {
   };
 
   const filteredQuotes = quotesList.filter(quote => {
-    const quoteLowerCase = quote.quote.toLowerCase(); // Convertir la quote a minúsculas
-    const filterLowerCase = filterQuote.toLowerCase(); // Convertir la frase del filtro a minúsculas
-    const quoteMatches = quoteLowerCase.includes(filterLowerCase);
+  const quoteLowerCase = quote.quote.toLowerCase(); // Convertir la quote a minúsculas
+  const filterLowerCase = filterQuote.toLowerCase(); // Convertir la frase del filtro a minúsculas
+  const quoteMatches = quoteLowerCase.includes(filterLowerCase);
     
     if (filterCharacter === 'all') {
       return quoteMatches;
