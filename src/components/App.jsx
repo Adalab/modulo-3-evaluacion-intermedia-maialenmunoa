@@ -36,12 +36,19 @@ function App() {
     }
   });
 
+  const characterHasNoQuotes = filterCharacter !== 'all' &&
+    !filteredQuotes.some(quote => quote.character === filterCharacter);
+
   return (
     <div className="page">
       <Header />
       <main>
         <Filters handleFilter={handleFilter} />
-        <QuotesList quotesList={filteredQuotes} />
+        {characterHasNoQuotes ? (
+          <p>El personaje seleccionado no tiene frases.</p>
+        ) : (
+          <QuotesList quotesList={filteredQuotes} />
+        )}
         <FormAdd />
       </main>
     </div>
