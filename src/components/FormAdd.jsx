@@ -51,7 +51,7 @@ function FormAdd({ handleAddQuote }) {
             onChange={handleInputChange}
           />
         </label>
-        <button className="form-add__button" type="submit">Añadir una nueva frase</button>
+        <button className="form-add__button" type="submit">AÑADIR</button>
       </form>
     );
   }

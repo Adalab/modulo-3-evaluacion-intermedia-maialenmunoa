@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 
-import Filters from "./Filters";
 import Header from "./Header";
+import Filters from "./Filters";
 import QuotesList from "./QuotesList";
 import FormAdd from "./FormAdd";
+import Footer from "./Footer";
 
 import dataFriends from "../data/friends.json";
 
 import "../scss/App.scss";
+
 
 function App() {
 
@@ -71,6 +73,7 @@ function App() {
         )}
         <FormAdd handleAddQuote={handleAddQuote}/>
       </main>
+      <Footer />
     </div>
   );
 }
