@@ -34,6 +34,7 @@ const handleAddQuote = (quote, character) => {
     };
     setQuotesList([...quotesList, newQuote]);
 };
+```
 
 ## Guía de inicio rápido 🔍
 
