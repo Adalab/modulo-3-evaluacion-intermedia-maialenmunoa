@@ -1,4 +1,4 @@
-# Frases de Friends
+# Buscador de frases de Friends
 
 Este proyecto consiste en una aplicación web donde las usuarias pueden buscar y visualizar frases famosas de sus personajes favoritos de la serie 'Friends'. La aplicación utiliza tecnologías web como React, JavaScript, HTML y CSS.
 
