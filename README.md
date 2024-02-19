@@ -2,19 +2,23 @@
 
 Este proyecto consiste en una aplicación web donde las usuarias pueden buscar y visualizar frases famosas de sus personajes favoritos de la serie 'Friends'. La aplicación utiliza tecnologías web como React, JavaScript, HTML y CSS.
 
-## Funcionalidades destacadas
+### **Funcionalidades destacadas**
 
 - Búsqueda de frases: Las usuarias pueden buscar frases de la serie 'Friends' utilizando un formulario de búsqueda.
 - Filtrado por personaje: La aplicación permite filtrar las frases por personaje.
 - Añadir nuevas frases: Las usuarias pueden agregar nuevas frases a la lista.
 
-## Tecnologías utilizadas
+### **Tecnologías utilizadas**
 
 - React: Para la creación de componentes reutilizables y la gestión del estado de la aplicación.
 - JavaScript: Para la lógica de la aplicación y la manipulación del DOM.
 - HTML & CSS: Para la estructura y el diseño de la interfaz de usuario.
 - Sass: Para la mejora de estilos con el preprocesador Sass.
 - Flexbox: Para la maquetación y disposición de elementos en la interfaz.
+
+## Link Github Pages 🌐
+
+Para ver el proyecto, visita el siguiente enlace: [Frases de Friends](https://beta.adalab.es/modulo-3-evaluacion-intermedia-maialenmunoa/)
 
 ## Uso de LocalStorage para el almacenamiento de datos
 
